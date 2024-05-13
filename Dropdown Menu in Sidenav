@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <style>
+        body{
+            background-color: #f1f1f1;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .sidebar{
+            background-color: #333;
+            color: white;
+            height: 100%;
+            width: 200px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            overflow-x: hidden;
+            padding-top: 20px;
+            z-index: 1;
+        }
+        .sidebar a, .openbtn {
+            text-transform: uppercase;
+            padding: 6px 8px 6px 16px;
+            text-decoration: none;
+            font-size: 20px;
+            color: #818181;
+            display: block;
+            border: none;
+            background: none;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+            outline: none;
+        } 
+        .sidebar a:hover, .openbtn:hover{
+            color: #f1f1f1;
+        }
+        .main{
+            margin-left: 200px;
+            padding: 0px 10px;
+            font-size: 20px;
+        }
+        .active{
+            background-color: #04AA6D;
+            color: white;
+        }
+        .dropdown-container{
+            display: none;
+            background-color: #161414;
+            padding-left: 8px;
+        }
+        .dropdown-container a{
+            color: white;
+            text-transform: lowercase;
+        }
+        .dropdown-container a:hover{
+            background-color: #b7bbba;
+            color: #404140;
+        }
+        .fa-caret-down{
+            float: right;
+            padding-right: 8px;
+        }
+        @media screen and (max-height: 450px) {
+            .sidebar {padding-top: 15px;}
+            .sidebar a {font-size: 18px;}
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <a href="#home">Home</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#clients">Clients</a>
+        <a href="#services">Services</a>
+        <button class="openbtn" onclick="toggleDropdown()">Dropdown
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+        </div>
+        <a href="#about">Search</a>
+    </div>
+    <div class="main">
+        <h2>Sidebar Dropdown</h2>
+        <p>Click on the dropdown button to open the dropdown menu inside the side navigation.</p>
+        <p>This sidebar is of full height (100%) and always shown.</p>
+        <p>Some random text..</p>
+    </div>
+    <script>
+        function toggleDropdown() {
+            var dropdownContent = document.querySelector(".dropdown-container");
+            var dropdownButton = document.querySelector(".openbtn");
+            dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
+            dropdownButton.classList.toggle("active");
+        }
+    </script>
+</body>
+</html>
