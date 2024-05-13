@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dropdown</title>
+  <style>
+    body{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-size: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+     
+    }
+    .dropdown{
+      margin-top: 200px;
+      margin-left: 300px;
+      display: inline-block;
+      position: relative;
+    }
+    .dropbtn{
+      background-color: #4CAF50;
+      color: white;
+      padding: 16px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+    }
+    .dropdown-content{
+      position: absolute;
+      align-items: center;
+      display: none;
+      /* min-height: 300px; */
+      min-width: 160px;
+      background-color: #f9f9f9;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+
+    }
+    .dropdown-content a{
+      display: block;
+      color: black;
+      text-align: left;
+      padding: 16px 14px;
+      text-decoration: none;
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+    .dropdown-content a:hover{
+      background-color: #f1f1f1;
+    }
+    .dropdown:hover .dropdown-content{
+      display: block;
+    }
+    .dropdown:hover.dropbtn{
+      background-color: #f70404;
+    }
+  </style>
+
+</head>
+<body>
+  <div class="dropdown">
+    <button class="dropbtn">Dropdown</button>
+    <div class="dropdown-content">
+      <a href="#">home</a>
+      <a href="#">news</a>
+      <a href="#">contact</a>
+      <a href="#">servies</a>
+    </div>
+  </div>
+</body>
+</html>
