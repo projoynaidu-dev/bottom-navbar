@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: #ffffff;
+        }
+        /* h2{
+            padding: 60px;
+            font-size: 40px;
+        }
+        body p{
+            padding: 60px;
+            font-size: 20px;
+        } */
+        .row{
+            display: flex;
+        }
+        .left{
+            width: 35%;
+            padding: 15px 0px;
+            
+        }
+        .left h2{
+            text-align: left;
+            padding: 10px;
+            font-size: 40px ;
+        }
+        #myInput{
+            width: 100%;
+            font-size: 18px;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        #mymenu{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        #mymenu li a{
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #000;
+            font-size: 23px;
+            text-transform: capitalize;
+        }
+        #mymenu li a:hover{
+            background-color: #c62f2f;
+        }
+
+        .right{
+            width: 65%;
+            padding: 15px 20px;
+            background-color: #E7E9EB;
+        }
+        .right h2{
+            text-align: center;
+            font-size: 40px;
+            padding: 10px;
+        }
+        .right p{
+            font-size: 20px;
+            padding: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <h2 style="padding: 60px; font-size: 40px;"> Search Menu</h2>
+    <p style="padding: 60px; font-size: 20px;">Start to type for a specific category inside the search bar to "filter" the search options.</p>
+   <div class="row">
+    <div class="left" style="background-color: #ddd;">
+        <h2 >menu</h2>
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+        <ul id="mymenu">
+            <li><a href="#">Html</a></li>
+            <li><a href="#">Css</a></li>
+            <li><a href="#">Javascript</a></li>
+            <li><a href="#">phyton</a></li>
+            <li><a href="#">mysql</a></li>
+            <li><a href="#">jquery</a></li>
+            <li><a href="#">Node.js</a></li>
+            <li><a href="#">php</a></li>
+            <li><a href="#">react</a></li>
+            <li><a href="#">bootstrap</a></li>
+            <li><a href="#"> angular</a></li>
+        </ul>
+    </div>
+    <div class="right">
+        <h2>Page Content</h2>
+        <p >Start to type for a specific category inside the search bar to "filter" the search options.</p>
+        <p>Some text..Some text..Some text..Some text..Some text..Some text..Some text..Some text..</p>
+        <p>Some other text..Some text..Some text..Some text..Some text..Some text..Some text..Some text..</p>
+        <p>Some text..</p>
+        <p>Start to type for a specific category inside the search bar to "filter" the search options.</p>
+        <p>Some text..Some text..Some text..Some text..Some text..Some text..Some text..Some text..</p>
+        <p>Some other text..Some text..Some text..Some text..Some text..Some text..Some text..Some text..</p>
+        <p>Some text..</p>
+    </div>
+   </div>
+   <script>
+    function myFunction() {
+        var input, filter, ul, li, a, i, txtValue;
+        input = document.getElementById('myInput');
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("mymenu");
+        li = ul.getElementsByTagName('li');
+        for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("a")[0];
+            txtValue = a.textContent || a.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = "";
+            } else {
+                li[i].style.display = "none";
+            }
+        }
+    }
+</script>
+</body>
+</html>
