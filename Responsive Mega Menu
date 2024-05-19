@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            background-color: white;
+            margin: 0;
+        }
+        .navbar{
+            background-color: #333;
+            font-family: Arial, Helvetica, sans-serif;
+            overflow: hidden;
+        }
+        .navbar a{
+            float: left;
+            color: white;
+            font-size: 16px;
+            text-align: center;
+            padding: 14px 16px ;
+            text-decoration: none;
+
+        }
+        .dropdown{
+            float: left;
+            overflow: hidden;
+        }
+        .dropdown .dropbtn{
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px ;
+            background-color: inherit;
+            font: inherit;
+            margin: 0;
+        }
+        .navbar a:hover, .dropdown:hover .dropbtn{
+            background-color: red;
+        }
+        .dropdown-content{
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            width: 100%;
+            left: 0;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content .header{
+            background-color: red;
+            color: white;
+            padding: 20px ;
+        }
+        .dropdown:hover .dropdown-content{
+            display: block;
+        }
+        .column{
+            float: left;
+            width: 33.3%;
+            color: white;
+           
+        }
+        .column h3{
+            text-align: center;
+            color: black;
+            font-family: inherit;
+            font-size: 24px;
+            text-transform: capitalize;
+        }
+        .column a{
+            font-size: 20px ;
+            float: none;
+            color: black;
+            display: block;
+            padding: 16px;
+            text-decoration: none;
+            text-align: center;
+            text-transform: capitalize;
+        }
+        .column a:hover{
+            background-color: #ddd;
+        }
+        .row:after{
+            content: "";
+            display: table;
+            clear: both;
+        }
+        @media screen and (max-width: 600px){
+            .column{
+                width: 100%;
+                height: auto;
+
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <div class="dropdown">
+       <button class="dropbtn">Dropdown <i class="fa fa-caret-down"></i></button>
+       <div class="dropdown-content">
+        <div class="header">
+        <h2> Mega menu </h2>
+        </div>
+        <div class="row">
+            <div class="column">
+                <h3>catagory 1</h3>
+                <a href="">link 1</a>
+                <a href="">link 2</a>
+                <a href="">link 3</a>
+            </div>
+            <div class="column">
+                <h3>catagory 2</h3>
+                <a href="">link 1</a>
+                <a href="">link 2</a>
+                <a href="">link 3</a>
+            </div>
+            <div class="column">
+                <h3>catagory 3</h3>
+                <a href="">link 1</a>
+                <a href="">link 2</a>
+                <a href="">link 3</a>
+            </div>
+
+        </div>
+
+       </div>
+        </div>
+        
+    </div>
+    
+</body>
+</html>
