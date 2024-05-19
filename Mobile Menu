@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        .mobile-container {
+            max-width: 480px;
+            height: 500px;
+            background-color:#555;
+            margin: auto;
+            margin-top: 50px;
+            color: rgb(255, 255, 255);
+            border-radius: 10px;
+            font-family: monospace;
+
+        }
+        .topnav{
+            overflow: hidden;
+            background-color: #333;
+            position: relative;
+
+
+        }
+        .topnav #mylinks{
+            display: none;
+        }
+        .topnav a{
+           display: block;
+           text-align: left;
+           color: white;
+           text-decoration: none;
+           font-size: 20px;
+           padding: 14px 16px;
+
+        }
+        .topnav  .icon{
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 0;
+            background-color: red;
+           
+        }
+        .topnav a:hover{
+            background-color: #ddd;
+            color: black;
+
+        }
+        .topnav a.active{
+            background-color: #04AA6D;
+            color: white;
+           
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="mobile-container">
+    <div class="topnav">
+        <a href="#home" class="active"> logo</a>
+        <div id="mylinks">
+            <a href="">news</a>
+            <a href="">contact</a>
+            <a href=""> servies</a>
+            <a href=""> about</a>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+          </a>
+    </div>
+    <div style="padding-left:16px">
+        <h3>Vertical Mobile Navbar</h3>
+        <p>This example demonstrates how a navigation menu on a mobile/smart phone could look like.</p>
+        <p>Click on the hamburger menu (three bars) in the top right corner, to toggle the menu.</p>
+      </div>
+    </div>
+    <script>
+        function myFunction() {
+            const x = document.getElementById("mylinks");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+    </script>
+    
+</body>
+</html>
