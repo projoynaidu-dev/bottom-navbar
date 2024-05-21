@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>breadcrumb</title>
+    <style>
+        ul.breadcrumb{
+            padding: 10px 16px;
+            background-color: #ddd;
+            list-style-type: none;
+
+        }
+        ul.breadcrumb li{
+            display: inline;
+            font-size: 18px;
+        }
+        ul.breadcrumb li+li:before{
+            content: "/";
+            padding: 8px;
+            color: black;
+        }
+        ul.breadcrumb li a{
+            color: #0275d8;
+            text-decoration: none;
+        }
+        ul.breadcrumb li a:hover{
+            color: #01447e;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h2>breadcrumb Pagination </h2>
+    <ul class="breadcrumb">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">picture</a></li>
+        <li><a href="#">summary 15</a></li>
+        <li><a href="#">italy</a></li>
+    </ul>
+
+    
+</body>
+</html>
