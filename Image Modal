@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #myImg{
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+      /* width: 300px; */
+    }
+
+    #myImg:hover{
+      opacity: 0.7;
+    }
+    .modal{
+      display: none;
+      position: fixed;
+      z-index: 1;
+      padding-top: 100px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: rgb(0, 0, 0);
+      /* background-color: rgba(0, 0, 0, 0.9); */
+
+    }
+    .modal-content{
+      margin: auto;
+      display: block;
+      width: 80%;
+      max-width: 700px;
+    }
+    #caption{
+      margin: auto;
+      display: block;
+      text-align: center;
+      color: white;
+      padding: 10px 0;
+      height: 150px;
+    }
+    .close{
+      position: absolute;
+      top: 15px;
+      font-weight: bold;
+      font-size: 30px;
+      right: 35px;
+      color: #f1f1f1;
+    }
+    .close:hover,
+    .close:focus{
+      color: #ddd;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    @media screen and (max-width: 700px){
+      .modal-content{
+        width: 100%;
+      }
+      
+    }
+
+  </style>
+</head>
+<body>
+  <h2> image model </h2>
+  <p>In this example, we use CSS to create a modal (dialog box) that is hidden by default.</p>
+<p>We use JavaScript to trigger the modal and to display the current image inside the modal when it is clicked on. Also note that we use the value from the image's "alt" attribute as an image caption text inside the modal.</p>
+<img id="myImg" src="https://www.w3schools.com/howto/img_snow_wide.jpg" alt="Snow" style="width:100%" max-width="300px">
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
+<script>
+  var modal = document.getElementById("myModal");
+  var img = document.getElementById("myImg");
+  var modalImg = document.getElementById("img01");
+  var captionText = document.getElementById("caption");
+  img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+  }
+  var span = document.getElementsByClassName("close")[0];
+  span.onclick = function(){
+    modal.style.display = "none";
+  }
+</script>
+
+  
+</body>
+</html>
