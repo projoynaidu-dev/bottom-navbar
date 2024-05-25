@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      box-sizing: border-box;
+    }
+    body{
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .column{
+      float: left;
+      width: 25%;
+      padding: 10px;
+
+    }
+    .column img{
+      cursor: pointer;
+      opacity: 0.8;
+    }
+    .column img:hover{
+      opacity: 1.0;
+    }
+    /* .row{
+      width: 100%;
+      flex-direction: column;
+      /* margin: 0 -5px; 
+      background-color: red;
+    } */
+
+    .row::after{
+      content: "";
+      display: table;
+      clear: both;
+    }
+    .container{
+      position: relative;
+      display: none;
+    }
+    #imgtext{
+      position: absolute;
+      bottom: 15px;
+      left: 15px;
+      color: white;
+    }
+    .closebtn{
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      color: white;
+      font-size: 35px;
+      cursor: pointer;
+    }
+
+  
+
+  </style>
+</head>
+<body>
+  <div style="text-align: center;">
+     <h2>Tabbed Image Gallery</h2>
+     <p>Click on the images below:</p>
+  </div>
+  <div class="row">
+    <div class="column">
+      <img src="https://www.w3schools.com/howto/img_nature.jpg" alt="img" style="width: 100%;" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+      <img src="https://www.w3schools.com/howto/img_snow.jpg" alt="img" style="width: 100%;" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+      <img src="https://www.w3schools.com/howto/img_mountains.jpg" alt="img" style="width: 100%;" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+      <img src="https://www.w3schools.com/howto/img_lights.jpg" alt="img" style="width: 100%;" onclick="myFunction(this);">
+    </div>
+  </div>
+  <div class="container">
+    <span onclick="this.parentElement.style.display= 'none'" class="closebtn">&times;</span>
+    <img id="expandedImg" style="width: 100%;">
+    <div id="imgtext"></div>
+  </div>
+
+
+  <script>
+    function myFunction(imgs) {
+      var expandImg = document.getElementById("expandedImg");
+      var imgText = document.getElementById("imgtext");
+      expandImg.src = imgs.src;
+      imgText.innerHTML = imgs.alt;
+      expandImg.parentElement.style.display = "block";
+    }
+    </script>
+    
+  
+</body>
+</html>
