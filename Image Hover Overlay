@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      background-color: #ffffff;
+      font-family: Arial, Helvetica, sans-serif;
+
+    }
+    .container{
+      position: relative;
+      width: 50%;
+    }
+    .image{
+      opacity: 1;
+      display: block;
+      width: 100%;
+      height: auto;
+      transition: .5s ease;
+      backface-visibility: hidden;
+    }
+    .middle{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      text-align: center;
+      opacity: 0;
+      transition: .5s ease;
+
+     
+    }
+    .container:hover .image{
+      opacity: 0.3;
+    }
+    .container:hover .middle{
+      opacity: 1;
+    }
+    .text {
+      background-color: rgba(0, 0, 0, 0.5);
+          color: rgb(255, 255, 255);
+          font-size: 20px;
+          padding: 16px 32px;
+          text-transform: capitalize;
+          border-radius: 5px;
+    }
+    .middle .text p{
+      font-size: 12px;
+      color: rgb(233, 194, 23);
+      text-transform: uppercase;
+    }
+
+  </style>
+</head>
+<body>
+  <h2>Fade in Overlay</h2>
+  <p>Hover over the image to see the effect.</p>
+
+
+  <div class="container">
+    <img class="image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9HA2BMMuQivpMOYmLwH-3CEIyKAixV4iD8ofRuZ-KHw&s" alt="" >
+    <div class="middle">
+      <div class="text"> john doe</div>
+      <p>front-end devloper</p>
+    </div>
+  </div>
+  
+</body>
+</html>
